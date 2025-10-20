@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IEEE MET - Quiz Challenge</title>
+    <link rel="stylesheet" href="quiz.css" />
+    <link rel="stylesheet" href="Quiz-effects.css" />
+  </head>
+  <body>
+    <!-- Background Elements -->
+    <div class="background-gradient"></div>
+    <div class="floating-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Left Side - Decorative -->
+      <div class="left-section">
+        <div class="rocket-container">
+          <div class="rocket">
+            <div class="rocket-body"></div>
+            <div class="rocket-window"></div>
+            <div class="rocket-flame"></div>
+          </div>
+        </div>
+        <h2 class="left-title">Challenge Yourself</h2>
+        <p class="left-subtitle">Test Your Knowledge & Win Prizes</p>
+      </div>
+
+      <!-- Right Side - Quiz Content -->
+      <div class="right-section">
+        <!-- Header -->
+        <div class="quiz-header">
+          <div class="logo-section">
+            <img src="logo.png" alt="IEEE" class="logo" />
+            <div class="logo-text">
+              <h3>IEEE MET</h3>
+              <p>Student Branch</p>
+            </div>
+          </div>
+          <div class="progress-info">
+            <span class="question-counter"
+              >Question <span id="currentQuestion">1</span> of
+              <span id="totalQuestions">15</span></span
+            >
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Content -->
+        <div class="quiz-content">
+          <!-- Timer Section -->
+          <div class="timer-section">
+            <svg class="timer-circle" width="80" height="80">
+              <circle class="timer-bg" cx="40" cy="40" r="35" />
+              <circle class="timer-fill" cx="40" cy="40" r="35" />
+              <text x="40" y="45" text-anchor="middle" class="timer-text">10</text>
+            </svg>
+          </div>
+
+          <!-- Question Display -->
+          <div class="question-section">
+            <div class="difficulty-badge" id="difficultyBadge">Easy</div>
+            <h2 class="question-text" id="questionText">Loading question...</h2>
+          </div>
+
+          <!-- Answer Options -->
+          <div class="answers-section">
+            <div class="answer-option" data-answer="0">
+              <div class="answer-letter">A</div>
+              <div class="answer-text" id="answer0">Option A</div>
+            </div>
+            <div class="answer-option" data-answer="1">
+              <div class="answer-letter">B</div>
+              <div class="answer-text" id="answer1">Option B</div>
+            </div>
+            <div class="answer-option" data-answer="2">
+              <div class="answer-letter">C</div>
+              <div class="answer-text" id="answer2">Option C</div>
+            </div>
+            <div class="answer-option" data-answer="3">
+              <div class="answer-letter">D</div>
+              <div class="answer-text" id="answer3">Option D</div>
+            </div>
+          </div>
+
+          <!-- Feedback Section -->
+          <div
+            class="feedback-section"
+            id="feedbackSection"
+            style="display: none"
+          >
+            <div class="feedback-content" id="feedbackContent"></div>
+            <button class="next-button" id="nextButton">Next Question</button>
+          </div>
+
+          <!-- Points Display -->
+          <div class="points-display">
+            <span class="points-label">Current Points:</span>
+            <span class="points-value" id="pointsValue">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Stage Modal -->
+    <div class="next-stage-modal" id="nextStageModal" style="display: none">
+      <div class="next-stage-content">
+        <div class="next-stage-header">
+          <h2>Next Stage Unlocked!</h2>
+          <p>Proceed to the Memory Cards Challenge.</p>
+        </div>
+        <div class="next-stage-footer">
+          <button class="next-stage-button" id="nextStageButton">المرحلة التالية</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="correctSound" preload="auto">
+      <source
+        src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA=="
+        type="audio/wav"
+      />
+    </audio>
+    <audio id="incorrectSound" preload="auto">
+      <source
+        src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA=="
+        type="audio/wav"
+      />
+    </audio>
+
+    <script type="module" src="quiz.js"></script>
+  </body>
+</html>

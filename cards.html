@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Cards - IEEE MET</title>
+    <link rel="stylesheet" href="cards.css"> <!-- تصحيح الرابط للـ CSS -->
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <!-- <img src="logo.png" alt="IEEE MET" class="logo"> -->
+                <h1>IEEE MET Student Branch</h1>
+            </div>
+            <div class="timer-section">
+                <div class="timer" id="timer">00:00</div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="main-content">
+            <!-- Instructions Modal -->
+            <div class="modal" id="instructionsModal">
+                <div class="modal-content">
+                    <h2>🎮 تعليمات اللعبة</h2>
+                    <div class="instructions-text">
+                        <p><strong>مرحباً بك في لعبة الذاكرة!</strong></p>
+                        <p>هدفك هو إيجاد جميع الأزواج المتطابقة من البطاقات.</p>
+                        
+                        <div class="scoring-info">
+                            <h3>💰 نظام النقاط:</h3>
+                            <ul>
+                                <li><span class="time-badge">أقل من 50 ثانية</span> → <strong>60 نقطة</strong> 🌟</li>
+                                <li><span class="time-badge">50 - 90 ثانية</span> → <strong>40 نقطة</strong> ⭐</li>
+                                <li><span class="time-badge">90 - 130 ثانية</span> → <strong>20 نقطة</strong> ✨</li>
+                                <li><span class="time-badge">أكثر من 120 ثانية</span> → <strong>10 نقاط</strong> 👍</li>
+                            </ul>
+                        </div>
+
+                        <div class="rules-info">
+                            <h3>📋 القواعد:</h3>
+                            <ul>
+                                <li>اضغط على البطاقات لكشف الصور</li>
+                                <li>حاول تذكر مكان الصور المتطابقة</li>
+                                <li>عندما تجد زوجاً متطابقاً، ستبقى البطاقات مكشوفة</li>
+                                <li>اجمع كل الأزواج لإكمال اللعبة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn-start" id="startBtn">🚀 ابدأ اللعب الآن</button>
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="game-section" id="gameSection" style="display: none;">
+                <div class="game-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">الوقت:</span>
+                        <span class="stat-value" id="displayTimer">00:00</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">الأزواج المتبقية:</span>
+                        <span class="stat-value" id="remainingPairs">10</span>
+                    </div>
+                </div>
+
+                <div class="cards-grid" id="cardsGrid">
+                    <!-- Cards will be generated here by JavaScript -->
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn-reset" id="resetBtn">🔄 إعادة تشغيل</button>
+                </div>
+            </div>
+
+            <!-- Victory Screen -->
+            <div class="victory-screen" id="victoryScreen" style="display: none;">
+                <div class="victory-content">
+                    <h2>🎉 تهانينا!</h2>
+                    <p>لقد أكملت اللعبة بنجاح!</p>
+                    <div class="final-stats">
+                        <div class="stat-item">
+                            <span class="stat-title">الوقت المستغرق:</span>
+                            <span class="stat-result" id="finalTime">00:00</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-title">النقاط المكتسبة:</span>
+                            <span class="stat-result points" id="finalPoints">0</span>
+                        </div>
+                    </div>
+                    <button class="btn-play-again" id="playAgainBtn">🎮 العب مرة أخرى</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Audio elements for sound effects -->
+    <audio id="matchSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==" type="audio/wav">
+    </audio>
+    <audio id="victorySound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==" type="audio/wav">
+    </audio>
+
+    <script type="module" src="cards.js"></script> <!-- تصحيح الرابط للـ JavaScript مع type="module" -->
+</body>
+</html>
